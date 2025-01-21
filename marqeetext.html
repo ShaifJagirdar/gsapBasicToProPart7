@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marqee text</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html , body{
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+        }
+        #page1{
+            width: 100%;
+            height: 100%;
+        }
+        #page2{
+            width: 100%;
+            height: 40%;
+            background-color: goldenrod;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        .marqee{
+            display: flex;
+            gap: 10px;
+            white-space: nowrap;
+            transform: translateX(-100%);
+        }
+        .marqee h2{
+            font-size: 5vw;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .arrow svg{
+            width: 90px;
+        }
+        #page3{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            window.addEventListener("wheel",function(dets){
+                if(dets.deltaY > 0){
+                    console.log("Scrolling Above", dets.deltaY)
+                    gsap.to(".marqee",{
+                        duration:2,
+                        x:"-200%",
+                        ease: "none"
+                    })
+                    gsap.to(".arrow svg",{
+                        rotate:180
+                    })
+                }
+                else
+                {
+                    gsap.to(".marqee",{
+                        duration:2,
+                        x:0,
+                        ease:"none"
+                    })
+                    gsap.to(".arrow svg",{
+                        rotate:0
+                    })
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="page1">
+
+    </div>
+    <div id="page2">
+        <div class="marqee">
+            <h2>This Is Marqee</h2>
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path style="fill:#fff" d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right"/></svg>
+            </div>
+        </div>
+        <div class="marqee">
+            <h2>This Is Marqee</h2>
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path style="fill:#fff" d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right"/></svg>
+            </div>
+        </div>
+        <div class="marqee">
+            <h2>This Is Marqee</h2>
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path style="fill:#fff" d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right"/></svg>
+            </div>
+        </div>
+        <div class="marqee">
+            <h2>This Is Marqee</h2>
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path style="fill:#fff" d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right"/></svg>
+            </div>
+        </div>
+        <div class="marqee">
+            <h2>This Is Marqee</h2>
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path style="fill:#fff" d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right"/></svg>
+            </div>
+        </div>
+    </div>
+    <div id="page3">    
+
+    </div>
+    
+</body>
+</html>
